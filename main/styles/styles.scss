@@ -1,0 +1,19 @@
+/* BASE */
+@import './base/reset';
+
+
+/* UTILITIES */
+@import './utilities/colors';
+@import './utilities/Fuentes/font';
+/* BLOCKS */
+@import './blocks/header';
+@import './blocks/body';
+@import './blocks/todolist';
+
+/* MEDIAS */
+
+
+*{
+    filter: sepia(10%);
+}
+

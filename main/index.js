@@ -5,8 +5,7 @@ const divPadre$$ = document.createElement('div');
 divPadre$$.className = "divPadre";
 main$$.appendChild(divPadre$$);
 const input$$ = document.querySelector('input');
-
-
+const anchord$$ = document.querySelector('.filtroTiposUl__tipos');
 
 
 // FUNCION DEL FETCH
@@ -20,8 +19,8 @@ const get = async (url) => {
     }
 }
 
-//FUNCION QUE LLAMA A LOS POKEMONS Y LOS METE EN UN ARRAY 
 
+//FUNCION QUE LLAMA A LOS POKEMONS Y LOS METE EN UN ARRAY 
 let todosPokemons = [];
 // console.log(todosPokemons);
 
@@ -32,8 +31,8 @@ const llamarPokemons = async () => {
     }
 }
 
-// FUNCION QUE PINTA TODOS LOS POKEMOS Y SUS CARACTERISTICAS
 
+// FUNCION QUE PINTA TODOS LOS POKEMOS Y SUS CARACTERISTICAS
 const pintar = async (todosPokemons) => {
     const divLimpio$$ = document.querySelector(".divPadre");
     divLimpio$$.innerHTML = "";
@@ -55,11 +54,11 @@ const pintar = async (todosPokemons) => {
                 <img src="${pokemon.sprites.versions["generation-i"]["red-blue"].front_gray}" alt="${pokemon.name}">
             </div>
             <div class= "divHijo__top--id">
-                <h2>No.${pokemon.id}</h2>
+                <h2>No.${pokemon.id.toString().padStart(3, '0')}</h2>
             </div>
         </div>
         <div class= "divHijo__bot">
-            <ol>
+            <ol class= "divHijo__bot--ol">
                 <li class= "divHijo__bot--nombre">${pokemon.name.toUpperCase()}</li>
                 <li class= "divHijo__bot--tipo">${tipos.join("/").toUpperCase()}</li>
                 <li class= "divHijo__bot--ht">HT ${pokemon.height}0cm</li>
@@ -70,14 +69,30 @@ const pintar = async (todosPokemons) => {
     }
 }
 
+
 // FILTRAR POR NOMBRE
-const filtrar = () => {
-    console.log(input$$.value);
+const filtrarNombre = () => {
     const pokemonfilter = todosPokemons.filter(
         (pokemon) => 
             pokemon.name.toLowerCase().includes(input$$.value.toLocaleLowerCase())
     );
     pintar(pokemonfilter);
+};
+
+// // FILTRAR POR TIPO
+const filtrarTipos = (tipo) => {
+
+    const typeFilter = todosPokemons.filter(
+        (pokemon) => {
+            if (pokemon.types.length === 1) {
+                return pokemon.types[0].type.name.includes(tipo)
+            } else {
+                return pokemon.types[0].type.name.includes(tipo) || pokemon.types[1].type.name.includes(tipo)
+            }
+        } 
+    );
+    pintar(typeFilter);
+    // console.log(typeFilter);
 };
 
 
@@ -88,13 +103,12 @@ const init = async () => {
 
     await pintar(todosPokemons);
 
+
 }
 init();
 
 
-input$$.addEventListener("input", filtrar);
-
-
+input$$.addEventListener("input", filtrarNombre);
 
 
 

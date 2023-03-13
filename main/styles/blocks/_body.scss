@@ -1,0 +1,101 @@
+body{
+    
+    background-image: url(/main/styles/utilities/Imagenes/pixel\ background.jpg);
+    backdrop-filter: sepia(10%);
+    filter: contrast(120%);
+    filter: drop-shadow(5px 5px 10px $gris2);
+    
+}
+    
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .buscador{
+        width: 90%;
+        height: 32px;
+        margin: 20px 0px;
+        text-align: center;
+        input{
+            width: 200px;
+            height: 20px;
+            border: none;
+            border: 5px solid $gris3;
+            background-image: url(/main/styles/utilities/Imagenes/logo_lupa.png);
+            background-repeat: no-repeat;
+            outline: none;
+            background-size: 25px;
+            background-position: 2px 1px;
+            padding-left: 40px;
+            
+        }
+    }
+    .filtroTiposUl{
+        margin: 40px 40px 0px 40px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        &__tipos{
+            font-size: 12px;
+            font-weight: 600;
+            color: $gris3;
+        }
+    }
+    .divPadre{
+        width: 80%;
+        padding: 75px 50px 50px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+    .divHijo{
+        border: double 8px $gris3;
+        width: 200px;
+        height: 300px;
+        padding: 20px;
+        background-color: $blanco;
+        &__top{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            img{
+                width: 150px;
+                height: auto;
+            }
+            &--id{
+                margin: 20px 10px 10px;
+            }
+            
+        }
+        &__bot{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0px 10px 10px 10px;
+            font-size: 12px;
+            &--ol{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 10px;
+            }
+        }
+    }
+}
+
+.arrow{
+    position: fixed;
+    bottom:20px;
+    right:20px;
+    &__img{
+        width: 50px;
+    }
+}

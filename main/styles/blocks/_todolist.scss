@@ -1,0 +1,53 @@
+.divlist{
+    font-family: pokemon;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 50px;
+    &__resultadosUl{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        &--li{
+            color: $gris3;
+        }
+        &--boton{
+            height: 25px;
+            border: 3px solid $gris3;
+            margin-left: 10px;
+            background-color: $blanco;
+            font-size: 8px;
+        }
+    }
+    &__titulo{
+        font-size: 30px;
+        margin: 30px;
+        color: $gris3;
+    }
+    &__formulario{
+        &--input{
+            margin: 30px;
+            width: 200px;
+            height: 20px;
+            padding-left: 10px;
+            border: none;
+            border: 5px solid $gris3;
+            outline: none;
+            background-size: 25px;
+            background-position: 2px 1px;
+            color: $gris3;
+        }
+        &--button{
+            height: 30px;
+            border: 3px solid $gris3;
+            background-color: $blanco;
+        }
+    }
+    &__vacio{
+        margin: 30px;
+        &--p{
+            color: $gris3;
+        }
+    }
+}
