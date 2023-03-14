@@ -1,3 +1,10 @@
+.tituloTodo{
+    width: 48%;
+    &__img{
+        width: 100%;
+    }
+}
+
 .divlist{
     font-family: pokemon;
     display: flex;

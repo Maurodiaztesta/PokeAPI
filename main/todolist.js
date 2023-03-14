@@ -21,6 +21,7 @@ const pintarLi = () => {
     ulLista$$.appendChild(liLista$$);
     liLista$$.appendChild(botonEliminar$$);
 
+
     frase();
 }
 

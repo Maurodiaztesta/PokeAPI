@@ -1,0 +1,47 @@
+.imagen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+        height: 100px;
+        margin-top: 20px;
+    }
+}
+
+.divPadreJuego{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: pokemon;
+    &__titulo{
+        text-align: center;
+        &--h1{
+            font-size: 30px;
+            font-weight: 700;
+            margin: 100px 50px 50px;
+        }
+        &--p{
+            font-size: 12px;
+        }
+    }
+    &__img{
+        width: 600px;
+        height: 600px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &--ruta{
+            position: absolute;
+            width: 230px; 
+            height: 230px;
+            top: 160px;
+        } 
+    }
+    &__texto{
+        &--p{
+            font-size: 20px;
+            padding-top: 20px;
+        }
+    }
+}

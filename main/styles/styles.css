@@ -90,6 +90,12 @@ header nav .nav__opciones--diariogame {
   font-family: pokemon;
   color: #737373;
 }
+header nav .titulo {
+  width: 60%;
+}
+header nav .titulo img {
+  width: 100%;
+}
 
 body {
   background-image: url(/main/styles/utilities/Imagenes/pixel\ background.jpg);
@@ -97,6 +103,15 @@ body {
           backdrop-filter: sepia(10%);
   filter: contrast(120%);
   filter: drop-shadow(5px 5px 10px #A6A6A6);
+  min-height: 100vh;
+}
+body .botonSubir {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: white;
+  cursor: pointer;
+  border-color: #737373;
 }
 
 main {
@@ -181,13 +196,11 @@ main .divHijo__bot--ol {
   gap: 10px;
 }
 
-.arrow {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
+.tituloTodo {
+  width: 48%;
 }
-.arrow__img {
-  width: 50px;
+.tituloTodo__img {
+  width: 100%;
 }
 
 .divlist {
@@ -242,7 +255,66 @@ main .divHijo__bot--ol {
   color: #737373;
 }
 
+.imagen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.imagen img {
+  height: 100px;
+  margin-top: 20px;
+}
+
+.divPadreJuego {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: pokemon;
+}
+.divPadreJuego__titulo {
+  text-align: center;
+}
+.divPadreJuego__titulo--h1 {
+  font-size: 30px;
+  font-weight: 700;
+  margin: 100px 50px 50px;
+}
+.divPadreJuego__titulo--p {
+  font-size: 12px;
+}
+.divPadreJuego__img {
+  width: 600px;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.divPadreJuego__img--ruta {
+  position: absolute;
+  width: 230px;
+  height: 230px;
+  top: 160px;
+}
+.divPadreJuego__texto--p {
+  font-size: 20px;
+  padding-top: 20px;
+}
+
 /* MEDIAS */
+@media screen and (max-width: 1000px) {
+  .divPadreJuego__img {
+    width: 60%;
+    height: 100px;
+  }
+  .divPadreJuego__img--gameboy {
+    display: none;
+  }
+  .divPadreJuego__img--ruta {
+    width: 80%;
+    height: auto;
+  }
+}
 * {
   filter: sepia(10%);
 }/*# sourceMappingURL=styles.css.map */

@@ -9,9 +9,10 @@
 @import './blocks/header';
 @import './blocks/body';
 @import './blocks/todolist';
+@import './blocks/juego';
 
 /* MEDIAS */
-
+@import './medias/game';
 
 *{
     filter: sepia(10%);

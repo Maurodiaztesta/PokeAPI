@@ -102,14 +102,22 @@ const init = async () => {
     await llamarPokemons();
 
     await pintar(todosPokemons);
-
-
+    
 }
 init();
 
 
 input$$.addEventListener("input", filtrarNombre);
 
+//BOTON PARA SUBIR
+
+const buttonUp$$ = document.querySelector('.botonSubir');
+buttonUp$$.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+})
 
 
 

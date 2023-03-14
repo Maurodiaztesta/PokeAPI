@@ -4,7 +4,16 @@ body{
     backdrop-filter: sepia(10%);
     filter: contrast(120%);
     filter: drop-shadow(5px 5px 10px $gris2);
-    
+
+    min-height: 100vh;
+    .botonSubir{
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: $blanco;
+        cursor: pointer;
+        border-color: $gris3;
+    }
 }
     
 main{
@@ -91,11 +100,4 @@ main{
     }
 }
 
-.arrow{
-    position: fixed;
-    bottom:20px;
-    right:20px;
-    &__img{
-        width: 50px;
-    }
-}
+
