@@ -20,17 +20,24 @@ header{
                 justify-content: space-between;
                 align-items: center;
                 gap: 100px;
+                &--div{
+                    width: 30%;
+                    li{
+                        text-align: center;
+                    }
+                }
                 &--diariogame{
                     font-family: pokemon;
                     color: $gris3;
                 }
             }
         }
-        .titulo{
-            width: 60%;
-            img{
-                width: 100%;
-            }
+        
+    }
+    .titulo{
+        width: 49%;
+        &__img{
+            width: 100%;
         }
     }
 }
