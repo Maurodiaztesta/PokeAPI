@@ -9,6 +9,7 @@ const anchord$$ = document.querySelector('.filtroTiposUl__tipos');
 
 
 // FUNCION DEL FETCH
+
 const get = async (url) => {
     try {
         const res = await fetch(url);
@@ -21,8 +22,8 @@ const get = async (url) => {
 
 
 //FUNCION QUE LLAMA A LOS POKEMONS Y LOS METE EN UN ARRAY 
+
 let todosPokemons = [];
-// console.log(todosPokemons);
 
 const llamarPokemons = async () => {
     for (let i = 1; i < 152; i++) {
@@ -33,6 +34,7 @@ const llamarPokemons = async () => {
 
 
 // FUNCION QUE PINTA TODOS LOS POKEMOS Y SUS CARACTERISTICAS
+
 const pintar = async (todosPokemons) => {
     const divLimpio$$ = document.querySelector(".divPadre");
     divLimpio$$.innerHTML = "";
@@ -42,6 +44,7 @@ const pintar = async (todosPokemons) => {
         divPadre$$.appendChild(divHijos$$);
 
         // ESTE BUCLE ME TRAE TODOS LOS TIPOS DE CADA POKEMON
+
         let tipos = [];
         for (const item of pokemon.types) {
             // console.log(pokemon.types);
@@ -71,6 +74,7 @@ const pintar = async (todosPokemons) => {
 
 
 // FILTRAR POR NOMBRE
+
 const filtrarNombre = () => {
     const pokemonfilter = todosPokemons.filter(
         (pokemon) => 
@@ -80,6 +84,7 @@ const filtrarNombre = () => {
 };
 
 // // FILTRAR POR TIPO
+
 const filtrarTipos = (tipo) => {
 
     const typeFilter = todosPokemons.filter(
@@ -92,11 +97,11 @@ const filtrarTipos = (tipo) => {
         } 
     );
     pintar(typeFilter);
-    // console.log(typeFilter);
 };
 
 
 // FUNCION QUE INICIA EN ORDEN TODAS LAS DEMAS FUNCIONES
+
 const init = async () => {
 
     await llamarPokemons();
@@ -105,8 +110,6 @@ const init = async () => {
     
 }
 init();
-
-
 input$$.addEventListener("input", filtrarNombre);
 
 //BOTON PARA SUBIR

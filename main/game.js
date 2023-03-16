@@ -1,16 +1,27 @@
+// CREAR VARIABLES CON TAMAÑO DE IMAGEN
+
 const width = 230;
 const height = 230;
 
+// FUNCION PARA NUMERO RANDOM
 let getRandomNumber = (size) => {
     return Math.floor(Math.random() * size);
 }
 
-let getDistance = (event, click) => {
-    let diffX = event.offsetX - click.x;
-    let diffY = event.offsetY - click.y;
+// FUNCION OBTENER DISTANCIA DE PUNTO A CLICK
+let getDistance = (event, target) => {
+    let diffX = event.offsetX - target.x;
+    let diffY = event.offsetY - target.y;
     return Math.sqrt((diffX * diffX) + (diffY * diffY));
 }
 
+// COLOCACION DE PUNTO EN EL MAPA
+let targetMap = {
+    x: getRandomNumber(width),
+    y: getRandomNumber(height)
+}
+
+// FUNCION PISTAS
 let getClue = (distance) => {
     if (distance < 30) {
         return "It's Burning!"
@@ -29,10 +40,7 @@ let getClue = (distance) => {
     }
 }
 
-let targetMap = {
-    x: getRandomNumber(width),
-    y: getRandomNumber(height)
-}
+// EVENTO DE LA IMAGEN
 
 const divPadre$$ = document.querySelector('.divPadreJuego');
 const ruta$$ = document.querySelector('.divPadreJuego__img--ruta');

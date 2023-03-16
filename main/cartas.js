@@ -1,4 +1,4 @@
-const urlCardBack = "./styles/utilities/Imagenes/cardback.png";
+// VARIABLES DE IMAGENES Y ARRAY
 
 const card1 = "./styles/utilities/Imagenes/cartas/1.png";
 const card2 = "./styles/utilities/Imagenes/cartas/2.png";
@@ -14,14 +14,12 @@ const card11 = "./styles/utilities/Imagenes/cartas/11.png";
 const card12 = "./styles/utilities/Imagenes/cartas/12.png";
 const card13 = "./styles/utilities/Imagenes/cartas/13.png";
 
-
 const arrayCartas = [card1, card2, card3, card4, card5, card6, card7, card8, card9, card10, card11, card12, card13];
 
 
-
+// BOTON CARTA ALEATORIA
 let divPadre$$ = document.querySelector('.divPadre');
 divPadre$$.className= 'flip--card';
-
 
 let carta = () => {
     if (divPadre$$.childElementCount === 0) {
@@ -33,17 +31,10 @@ let carta = () => {
         imgCard$$.className = "flip-vertical-right";
         imgCard$$.setAttribute("src", arrayCartas[Math.floor(Math.random() * arrayCartas.length)]);
         divCard$$.appendChild(imgCard$$);
-
-        // let imgCardBack$$ = document.createElement('img');
-        // imgCardBack$$.className = "flip--card--inner--back";
-        // imgCardBack$$.setAttribute("src", urlCardBack);
-        // divCard$$.appendChild(imgCardBack$$);
-
-        
     } 
-    
-
 };
+
+// BOTON BORRAR
 
 let borrar = () => {
     if (divPadre$$.childElementCount === 1) {

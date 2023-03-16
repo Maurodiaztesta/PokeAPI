@@ -5,28 +5,32 @@ const inputLista$$ = document.querySelector(".divlist__formulario--input");
 const ulLista$$ = document.querySelector(".divlist__resultadosUl");
 
 
-
+// PINTAR VALOR DE INPUT
 const pintarLi = () => {
-    const botonEliminar$$ = document.createElement("button");
+    if (inputLista$$.value != "") {
+        const botonEliminar$$ = document.createElement("button");
 
-    const liLista$$ = document.createElement("li");
-    liLista$$.className = ("divlist__resultadosUl--li");
-    botonEliminar$$.className = ("divlist__resultadosUl--boton");
-    botonEliminar$$.textContent = ("X")
+        const liLista$$ = document.createElement("li");
+        liLista$$.className = ("divlist__resultadosUl--li");
+        botonEliminar$$.className = ("divlist__resultadosUl--boton");
+        botonEliminar$$.textContent = ("X")
 
-    liLista$$.textContent = (inputLista$$.value);
+        liLista$$.textContent = (inputLista$$.value);
 
-    botonEliminar$$.addEventListener("click", borrarDeLista);
+        botonEliminar$$.addEventListener("click", borrarDeLista);
 
-    ulLista$$.appendChild(liLista$$);
-    liLista$$.appendChild(botonEliminar$$);
+        ulLista$$.appendChild(liLista$$);
+        liLista$$.appendChild(botonEliminar$$);
 
+        frase();
 
-    frase();
+        inputLista$$.value = "";
+        inputLista$$.setAttribute("placeholder", "Add task...");
+    }
 }
 
 
-
+// BORRAR
 const borrarDeLista = (e) => {
     e.target.parentNode.remove();
     frase();
@@ -34,7 +38,7 @@ const borrarDeLista = (e) => {
 
 botonAñadir$$.addEventListener("click", pintarLi);
 
-
+// TEXTO ALL TASK COMPLETED
 const frase = () => {
     const p$$ = document.querySelector('.divlist__vacio--p');
     if (ulLista$$.childElementCount === 0) {
